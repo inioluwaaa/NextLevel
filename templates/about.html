@@ -41,6 +41,7 @@
                 <li><a href="/login">Login</a></li>
                 <li><a href="/game">Game</a></li>
                 <li><a href="/leaderboard">Leaderboard</a></li>
+                <a href="/conferences">Conference Highlights</a>
                 <li class="active"><a href="/about">About</a></li>
             </ul>
         </div>
@@ -71,7 +72,7 @@
                 <div id="middleHero">
                     <h2 class="mentorTitle" id="mentorTitle">
                         <!-- Please don't remove old conference staffs list. Keep appending to the top of this section for subsequent years. - Tan, 7th Feb 25. -->
-                        Conference 2025</h2>
+                        Conference 2026</h2>
                     <div class="row" id="mentors">
                         <div class="card-slider"></div>
                     </div>
@@ -81,6 +82,26 @@
         </div>
     </div>
 </section>
+
+<section class="container-fluid sec4">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div id="middleHeroStudent">
+            <h2 class="mentorTitle" id="studentMentorTitle">Student Mentors</h2>
+  
+            <div class="row" id="studentMentors">
+              <div class="card-slider"></div>
+            </div>
+  
+            <div style="clear: both; padding-bottom: 40px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
@@ -102,18 +123,12 @@
                 linked: 'https://www.linkedin.com/in/allysievers/'
             },
 
-            {
-                name: 'Sarah Schauer', 
-                img: 'static/img/staffs/Sarah Schauer.jpeg',
-                dsc: 'LEAD Coordinator',
-                linked: 'https://www.linkedin.com/in/sarahschauer/'
-            },
 
             {
-                name: 'Maria Cacho', 
-                img: 'static/img/staffs/Maria Cacho.jpeg',
+                name: 'Nia Abdous', 
+                img: 'static/img/staffs/nia_next_level.jpeg',
                 dsc: 'Graduate Assistant',
-                linked: 'https://www.linkedin.com/in/cacho-maria/'
+                linked: ''
             },
 
             {
@@ -122,35 +137,33 @@
                 dsc: 'Graduate Assistant',
                 linked: 'https://www.linkedin.com/in/elnazamini/'
             },
-
             {
-                name: 'Prateek Sharma', 
-                img: 'static/img/staffs/Prateek Sharma.jpeg',
-                dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/prateek-sharma-91a93p/'
+            name: 'Sarah wack', 
+            img: 'static/img/staffs/sarah_wack.jpeg',
+            dsc: 'Graduate Assistant',
+            linked: 'https://www.linkedin.com/in/sarahwack/'
             },
 
             {
-                name: 'Tanweer Ashif', 
-                img: 'static/img/staffs/Tanweer Ashif.jpg',
+                name: 'Inioluwa Adesanya', 
+                img: 'static/img/staffs/inioluwa.jpg',
                 dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/tanweerashif/'
+                linked: 'https://www.linkedin.com/in/inioluwa-adesanya-b0958621a'
             },
 
             {
-                name: 'Kartike Chaurasia', 
-                img: 'static/img/staffs/Kartike Chaurasia.jpeg',
+                name: 'Keiven Lu', 
+                img: 'static/img/staffs/Keiven.jpg',
                 dsc: 'Logistics and Game',
                 linked: 'https://www.linkedin.com/in/kartike2001/'
             },
 
-            {
-                name: 'Isaac Ho',
-                img: 'static/img/staffs/Isaac Ho.jpeg',
-                dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/isaacwho/'
-            }
+          
         ];
+
+
+    
+
         cards.forEach(function (t, i) {
             var cardhtml = `<div class="card">
     <h2 class="title">${
@@ -204,6 +217,8 @@
         });
     });
 
+
+
     function openschedule(evt, cityName) {
         var i,
             tabcontent,
@@ -219,16 +234,15 @@
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-
+  
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>
-
 <!-- Footer -->
 <section class="footer container">
     <div class=" clearfix">
         <div class="col-sm-12">
-            <p>© 2025 Next-Level Leadership. All Rights Reserved.</p>
+            <p>© 2026 Next-Level Leadership. All Rights Reserved.</p>
         </div>
     </div>
 </section>
