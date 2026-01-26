@@ -209,6 +209,9 @@ def conferences():
         "img/conferences/conference_09.png",
         "img/conferences/conference_10.png",
         "img/conferences/conference_11.png",
+        "img/conferences/conference_12.png",
+        "img/conferences/conference_13.png",
+
     ]
     return render_template(
         "conferences.html",
