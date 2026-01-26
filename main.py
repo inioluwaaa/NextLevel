@@ -195,6 +195,32 @@ def other_image(filename):
     return send_from_directory('static/img/others', filename)
 
 
+@app.route("/conferences")
+def conferences():
+    images = [
+        "img/conferences/conference_01.png",
+        "img/conferences/conference_02.png",
+        "img/conferences/conference_03.png",
+        "img/conferences/conference_04.png",
+        "img/conferences/conference_05.png",
+        "img/conferences/conference_06.png",
+        "img/conferences/conference_07.png",
+        "img/conferences/conference_08.png",
+        "img/conferences/conference_09.png",
+        "img/conferences/conference_10.png",
+        "img/conferences/conference_11.png",
+        "img/conferences/conference_12.png",
+        "img/conferences/conference_13.png",
+
+    ]
+    return render_template(
+        "conferences.html",
+        images=images,
+        title="Conference Highlights"
+    )
+
+
+
 def register_users_from_json():
     json_file_path = 'users.json'
     try:

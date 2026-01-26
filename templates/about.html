@@ -42,6 +42,7 @@
                 <li><a href="/game">Game</a></li>
                 <li><a href="/leaderboard">Leaderboard</a></li>
                 <li class="active"><a href="/about">About</a></li>
+                <li><a href="/conferences">Conference Highlights</a></li>
             </ul>
         </div>
     </div>
@@ -71,7 +72,7 @@
                 <div id="middleHero">
                     <h2 class="mentorTitle" id="mentorTitle">
                         <!-- Please don't remove old conference staffs list. Keep appending to the top of this section for subsequent years. - Tan, 7th Feb 25. -->
-                        Conference 2025</h2>
+                        Conference 2026</h2>
                     <div class="row" id="mentors">
                         <div class="card-slider"></div>
                     </div>
@@ -82,38 +83,51 @@
     </div>
 </section>
 
+<section class="container-fluid sec4">
+    <div class="container">
+      <div class="row clearfix">
+        <div class="col-sm-12">
+          <div id="middleHeroStudent">
+            <h2 class="mentorTitle" id="studentMentorTitle">Student Leaders</h2>
+  
+            <div class="row" id="studentMentors">
+              <div class="card-slider"></div>
+            </div>
+  
+            <div style="clear: both; padding-bottom: 40px;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
 <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/@accessible360/accessible-slick@1.0.1/slick/slick.min.js'></script>
 <script>
     $(document).ready(function () {
-        var cards = [
+  
+      
+      var cards = [
+        {
+          name: "Susan O'Rourke",
+          img: 'static/img/staffs/Susan.png',
+          dsc: 'Assistant Dir Leadership & Development',
+          linked: 'https://www.linkedin.com/in/susan-davis-orourke/'
+        },
+        {
+          name: 'Ally Sievers',
+          img: 'static/img/staffs/Ally Sievers.jpeg',
+          dsc: 'LEAD Coordinator',
+          linked: 'https://www.linkedin.com/in/allysievers/'
+        },
             {
-                name: "Susan O'Rourke", 
-                img: 'static/img/staffs/Susan.png',
-                dsc: 'Assistant Dir Leadership & Development',
-                linked: 'https://www.linkedin.com/in/susan-davis-orourke/'
-            },
-
-            {
-                name: 'Ally Sievers',
-                img: 'static/img/staffs/Ally Sievers.jpeg',
-                dsc: 'LEAD Coordinator',
-                linked: 'https://www.linkedin.com/in/allysievers/'
-            },
-
-            {
-                name: 'Sarah Schauer', 
-                img: 'static/img/staffs/Sarah Schauer.jpeg',
-                dsc: 'LEAD Coordinator',
-                linked: 'https://www.linkedin.com/in/sarahschauer/'
-            },
-
-            {
-                name: 'Maria Cacho', 
-                img: 'static/img/staffs/Maria Cacho.jpeg',
+                name: 'Nia Abdous', 
+                img: 'static/img/staffs/nia_next_level.png',
                 dsc: 'Graduate Assistant',
-                linked: 'https://www.linkedin.com/in/cacho-maria/'
+                linked: ''
             },
 
             {
@@ -122,113 +136,188 @@
                 dsc: 'Graduate Assistant',
                 linked: 'https://www.linkedin.com/in/elnazamini/'
             },
-
             {
-                name: 'Prateek Sharma', 
-                img: 'static/img/staffs/Prateek Sharma.jpeg',
-                dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/prateek-sharma-91a93p/'
+            name: 'Sarah wack', 
+            img: 'static/img/staffs/sarah_wack.jpg',
+            dsc: 'Graduate Assistant',
+            linked: 'https://www.linkedin.com/in/sarahwack/'
             },
 
             {
-                name: 'Tanweer Ashif', 
-                img: 'static/img/staffs/Tanweer Ashif.jpg',
+                name: 'Inioluwa Adesanya', 
+                img: 'static/img/staffs/inioluwa.jpg',
                 dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/tanweerashif/'
+                linked: 'https://www.linkedin.com/in/inioluwa-adesanya-b0958621a'
             },
 
             {
-                name: 'Kartike Chaurasia', 
-                img: 'static/img/staffs/Kartike Chaurasia.jpeg',
+                name: 'Keiven Lu', 
+                img: 'static/img/staffs/Keiven.jpg',
                 dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/kartike2001/'
+                linked: 'https://www.linkedin.com/in/keiven-lu/'
+            },
+
+      ];
+  
+      var $confSlider = $("#mentors .card-slider");
+  
+      cards.forEach(function (t) {
+        var cardhtml = `<div class="card">
+          <h2 class="title">${t.name}</h2>                                        
+          <div class="image">
+            <img src="${t.img}" alt="${t.dsc}">
+          </div>
+          <p class="description">${t.dsc}</p>
+          <div class="button-28-div">
+            <button onclick="window.location.href='${t.linked}'" class="button-28" role="button"
+              ${(!t.linked || t.linked.trim() === "") ? "disabled" : ""}>
+              Connect
+            </button>
+          </div>
+        </div>`;
+  
+        $confSlider.append(cardhtml);
+      });
+  
+      $confSlider.slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 5,
+        infinite: true,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 3 } },
+          { breakpoint: 800, settings: { slidesToShow: 2 } },
+          { breakpoint: 600, settings: { slidesToShow: 1 } }
+        ]
+      });
+  
+  
+      // ====== Student Mentors (new) ======
+      var studentCards = [
+             {
+                name: 'Inioluwa Adesanya', 
+                img: 'static/img/staffs/inioluwa.jpg',
+                dsc: 'Logistics and Game',
+                linked: 'https://www.linkedin.com/in/inioluwa-adesanya-b0958621a'
             },
 
             {
-                name: 'Isaac Ho',
-                img: 'static/img/staffs/Isaac Ho.jpeg',
+                name: 'Keiven Lu', 
+                img: 'static/img/staffs/Keiven.jpg',
                 dsc: 'Logistics and Game',
-                linked: 'https://www.linkedin.com/in/isaacwho/'
-            }
-        ];
-        cards.forEach(function (t, i) {
-            var cardhtml = `<div class="card">
-    <h2 class="title">${
-                t.name
-            }</h2>
+                linked: 'https://www.linkedin.com/in/keiven-lu/'
+            },
+            {
+                name: 'Nia Abdous', 
+                img: 'static/img/staffs/nia_next_level.png',
+                dsc: 'Graduate Assistant',
+                linked: ''
+            },
 
-    <div class="image">
-      <img src="${
-                t.img
-            }" alt="${
-                t.dsc
-            }">
-    </div>
-  <p class="description">${
-                t.dsc
-            }</p>
-    <div class="button-28-div">
-        <button onclick="window.location.href='${
-                t.linked
-            }'" class = "button-28" role = "button">Connect</button>
-    </div>
-                       
+            {
+                name: 'Elnaz Amini', 
+                img: 'static/img/staffs/Elnaz Amini.jpeg',
+                dsc: 'Graduate Assistant',
+                linked: 'https://www.linkedin.com/in/elnazamini/'
+            },
+            {
+                name: 'Paige Kent', 
+                img: 'static/img/staffs/Paige_Kent.png',
+                dsc: 'Graduate Intern',
+                linked: ''
+            },
+            {
+                name: 'Shaina Patash', 
+                img: 'static/img/staffs/shaina.png',
+                dsc: 'Community Assistant',
+                linked: ''
+            },
 
+            {
+                name: 'Shiv Salabah', 
+                img: 'static/img/staffs/shiv.png',
+                dsc: 'Research Assistant',
+                linked: ''
+            },
+            {
+                name: 'DJ Ruskzowki', 
+                img: 'static/img/staffs/dj.png',
+                dsc: 'Resident Assistant',
+                linked: ''
+            },
+            {
+                name: 'Will Dong', 
+                img: 'static/img/staffs/will_dong.png',
+                dsc: 'VP of clubs',
+                linked: ''
+            },
 
-</div>`
-            $('.card-slider').append(cardhtml)
-        })
-        $('.card-slider').slick({
-            dots: false,
-            arrows: true,
-            slidesToShow: 5,
-            infinite: true,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                }, {
-                    breakpoint: 800,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                }, {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
-            ]
-        });
+            {
+                name: 'Hiya Hushar Patel', 
+                img: 'static/img/staffs/hiya.png',
+                dsc: 'peer mentor',
+                linked: ''
+            },
+           
+            {
+                name: 'Parker Cantie', 
+                img: 'static/img/staffs/parker.png',
+                dsc: 'vp for leadership',
+                linked: ''
+            },
+
+            {
+                name: 'Natasha Acevedo', 
+                img: 'static/img/staffs/natasha.png',
+                dsc: 'Resident Assistant',
+                linked: ''
+            },
+      ];
+  
+      var $studentSlider = $("#studentMentors .card-slider");
+  
+      studentCards.forEach(function (t) {
+        var cardhtml = `<div class="card">
+          <h2 class="title">${t.name}</h2>
+          <div class="image">
+            <img src="${t.img}" alt="${t.dsc}">
+          </div>
+          <p class="description">${t.dsc}</p>
+          <div class="button-28-div">
+            <button onclick="window.location.href='${t.linked}'" class="button-28" role="button"
+              ${(!t.linked || t.linked.trim() === "") ? "disabled" : ""}>
+              Connect
+            </button>
+          </div>
+        </div>`;
+  
+        $studentSlider.append(cardhtml);
+      });
+  
+      $studentSlider.slick({
+        dots: false,
+        arrows: true,
+        slidesToShow: 5,
+        infinite: true,
+        responsive: [
+          { breakpoint: 1024, settings: { slidesToShow: 3 } },
+          { breakpoint: 800, settings: { slidesToShow: 2 } },
+          { breakpoint: 600, settings: { slidesToShow: 1 } }
+        ]
+      });
+  
     });
-
-    function openschedule(evt, cityName) {
-        var i,
-            tabcontent,
-            tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-</script>
-
+  
+    
+    var d = document.getElementById("defaultOpen");
+    if (d) d.click();
+  </script>
+  
 <!-- Footer -->
 <section class="footer container">
     <div class=" clearfix">
         <div class="col-sm-12">
-            <p>© 2025 Next-Level Leadership. All Rights Reserved.</p>
+            <p>© 2026 Next-Level Leadership. All Rights Reserved.</p>
         </div>
     </div>
 </section>
